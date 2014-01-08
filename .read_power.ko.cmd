@@ -1,0 +1,1 @@
+cmd_/home/spica/work/vexpress/code/power_monitor/read_power.ko := arm-linux-gnueabi-ld -EL -r  -T /home/spica/work/linaro-kernel/scripts/module-common.lds --build-id  -o /home/spica/work/vexpress/code/power_monitor/read_power.ko /home/spica/work/vexpress/code/power_monitor/read_power.o /home/spica/work/vexpress/code/power_monitor/read_power.mod.o
