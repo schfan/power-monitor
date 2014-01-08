@@ -6,6 +6,10 @@
 #include <linux/time.h>
 #include <linux/timer.h>
 #include <linux/delay.h>
+#include <linux/syscalls.h>
+#include <linux/file.h>
+#include <linux/fs.h>
+#include <linux/fcntl.h>
 
 // SPC_SYS_CFG registers
 #define SPC_SYS_CFGCTRL ((unsigned int*) 0x7FFF0B10)
@@ -16,9 +20,34 @@
 #define SPC_SYS_CFGRDATA ((unsigned int*) 0x7FFF0B74)
 
 static struct task_struct *thread1;
+static int pw[10000];
+
+void auto_write(void){	
+	struct file *file;
+	int i;
+	int length;
+	char buf[15];
+	loff_t pos = 0;
+	char *filename = "/data/power.txt";
+	length = 10000;
+	
+	mm_segment_t old_fs = get_fs();
+	set_fs(get_ds());
+
+	file = filp_open(filename, O_WRONLY|O_CREAT, 0644);
+
+	if (file) {
+		for (i = 0; i < length; i++){
+			sprintf(buf, "0x%08X\n",pw[i]);
+			vfs_write(file, buf, strlen(buf), &pos);
+		}
+		filp_close(file, NULL);
+	}
+	set_fs(old_fs);
+}
+
 
 int thread_fn() {
-	unsigned int din,stat;
 	int *mmio = NULL;
 	int *cfgctrl = NULL;
 	int *cfgreq = NULL;
@@ -27,6 +56,8 @@ int thread_fn() {
 	int *cfgwdata = NULL;
 	int *cfgrdata = NULL;
 	int power15 = 0; 
+	int n = 0;
+
 	mmio = ioremap_nocache(0x7FFF0B00,0x100);
 	if (mmio != NULL) {
 		cfgctrl = (int *)((int)mmio + 0x10);
@@ -78,16 +109,22 @@ int thread_fn() {
 */
 
 	while (!kthread_should_stop())  {
-             set_current_state(TASK_RUNNING);
-	     *cfgctrl = 0x80c00000; //Read power for A15
-             if (*cfgctrl == 0x80c00000){
-                     power15 = *cfgrdata;
-             }  
-	
-	     printk ("0x%08X\n", power15);
-             set_current_state(TASK_INTERRUPTIBLE);
-             msleep_interruptible(100);
+   	     if (n<10000){
+		     set_current_state(TASK_RUNNING);
+		     *cfgctrl = 0x80c00000; //Read power for A15
+		     if (*cfgctrl == 0x80c00000){
+			     power15 = *cfgrdata;
+		     }  
+
+		     // printk ("0x%08X\n", power15);
+		     pw[n] = power15;
+		     set_current_state(TASK_INTERRUPTIBLE);
+		     msleep_interruptible(10);
+		     n++;
+	     } else 
+		     break;
 	}
+	auto_write();
 
 	iounmap(mmio);
 	mmio = NULL;
