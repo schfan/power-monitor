@@ -10,6 +10,7 @@
 #include <linux/file.h>
 #include <linux/fs.h>
 #include <linux/fcntl.h>
+#include <linux/types.h>
 
 // SPC_SYS_CFG registers
 #define SPC_SYS_CFGCTRL ((unsigned int*) 0x7FFF0B10)
@@ -21,16 +22,24 @@
 
 static struct task_struct *thread1;
 static int pw[10000];
+static unsigned long long tm[10000];
 
+unsigned long long now_time(void){
+	struct timespec ts;
+	getnstimeofday(&ts);
+//	uint64_t current_time = 0;
+	unsigned long long current_time = ts.tv_sec * 1000000000LL + ts.tv_nsec;//current time in micro seconds
+	return current_time;
+}
 void auto_write(void){	
 	struct file *file;
 	int i;
 	int length;
-	char buf[15];
+	char buf[35];
 	loff_t pos = 0;
 	char *filename = "/data/power.txt";
 	length = 10000;
-	
+
 	mm_segment_t old_fs = get_fs();
 	set_fs(get_ds());
 
@@ -38,7 +47,7 @@ void auto_write(void){
 
 	if (file) {
 		for (i = 0; i < length; i++){
-			sprintf(buf, "0x%08X\n",pw[i]);
+			sprintf(buf, "%llu 0x%08X\n", tm[i], pw[i]);
 			vfs_write(file, buf, strlen(buf), &pos);
 		}
 		filp_close(file, NULL);
@@ -70,29 +79,29 @@ int thread_fn() {
 		iounmap(mmio);
 		mmio = NULL;
 		return 0;
-        } 
-/*
-	if ((*cfgreq & 0x00000001) ||
-			(*flag & 0x00000001))
-	{
-		// Wait for complete flag (or interrupt 95)
-		if (0){
-			while (!(*flag & 0x00000001))
-				continue;
-		}
-		// Handle any outstanding requests here
-		// Clear the complete flag
-		// Wait for complete flag (or interrupt 95)
-	}
-	// Set the data (only required for writes)
-	*cfgwdata = 0x00000000;
-	// Set the control value
-	*cfgctrl = 0x80100001;
+	} 
+	/*
+	   if ((*cfgreq & 0x00000001) ||
+	   (*flag & 0x00000001))
+	   {
 	// Wait for complete flag (or interrupt 95)
 	if (0){
-		while (!(*flag & 0x00000001))
-			continue;
-        }
+	while (!(*flag & 0x00000001))
+	continue;
+	}
+	// Handle any outstanding requests here
+	// Clear the complete flag
+	// Wait for complete flag (or interrupt 95)
+	}
+	// Set the data (only required for writes)
+	 *cfgwdata = 0x00000000;
+	// Set the control value
+	 *cfgctrl = 0x80100001;
+	// Wait for complete flag (or interrupt 95)
+	if (0){
+	while (!(*flag & 0x00000001))
+	continue;
+	}
 	// Read value back
 	din = *cfgrdata;
 	// Read the status and clear the complete flag
@@ -106,23 +115,24 @@ int thread_fn() {
 	printk("\n");
 	// Display value and status
 	printk ("Data:0x%08X, Status:0x%08X\n", din, stat);
-*/
+	 */
 
 	while (!kthread_should_stop())  {
-   	     if (n<10000){
-		     set_current_state(TASK_RUNNING);
-		     *cfgctrl = 0x80c00000; //Read power for A15
-		     if (*cfgctrl == 0x80c00000){
-			     power15 = *cfgrdata;
-		     }  
+		if (n<10000){
+			set_current_state(TASK_RUNNING);
+			*cfgctrl = 0x80c00000; //Read power for A15
+			if (*cfgctrl == 0x80c00000){
+				power15 = *cfgrdata;
+			}  
 
-		     // printk ("0x%08X\n", power15);
-		     pw[n] = power15;
-		     set_current_state(TASK_INTERRUPTIBLE);
-		     msleep_interruptible(10);
-		     n++;
-	     } else 
-		     break;
+			// printk ("0x%08X\n", power15);
+			pw[n] = power15;
+			tm[n] = now_time();
+			set_current_state(TASK_INTERRUPTIBLE);
+			msleep_interruptible(10);
+			n++;
+		} else 
+			break;
 	}
 	auto_write();
 

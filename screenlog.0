@@ -1,0 +1,705 @@
+�
+
+ARM V2M Boot loader v1.1.2
+HBI0190 build 2313
+
+ARM V2M Firmware v3.1.2
+Build Date: Apr 16 2013
+
+Date: Thu 09 Jan 2014
+Time:     20:53:56    
+
+Cmd> 
+Powering up system...
+Daughterboard fitted to site 1.
+
+Switching on ATXPSU...
+ATX3V3: ON
+VIOset: 1.8V
+MBtemp: 21 degC
+
+Configuring motherboard (rev D, var A)...
+IOFPGA  config: PASSED
+MUXFPGA config: PASSED
+OSC CLK config: PASSED
+
+Testing SMC devices (FPGA build 16)...
+SRAM 32MB test: PASSED
+VRAM  8MB test: PASSED
+LAN9118   test: PASSED
+USB & OTG test: PASSED
+KMI1/KMI2 test: PASSED
+MMC & SD  test: PASSED
+DVI image test: PASSED
+AACI AC97 test: PASSED
+CF card   test: PASSED
+UART port test: PASSED
+MAC addrs test: PASSED
+
+Reading Site 1 Board File \SITE1\HBI0249A\board.txt
+DB1 JTAG configuration complete.
+Setting DB1 OSCCLKS...
+DB1.0 DCC 0 SPI configuration complete.
+
+Writing SCC 0x40610007 with 0xFF00FF00
+Writing SCC 0x40610046 with 0x01CD1011
+Writing SCC 0x406101C0 with 0x0001F001
+Writing SCC 0x40610100 with 0x33330C00
+Writing SCC 0x40610048 with 0x022F1010
+Writing SCC 0x40610049 with 0x0011710D
+Writing SCC 0x4061004A with 0x022F1010
+Writing SCC 0x4061004B with 0x0011710D
+Writing SCC 0x4061004C with 0x022F1010
+Writing SCC 0x4061004D with 0x0011710D
+Writing SCC 0x4061004E with 0x022F1010
+Writing SCC 0x4061004F with 0x0011710D
+Writing SCC 0x40610300 with 0x00000007
+Writing SCC 0x40610301 with 0x060E0356
+Writing SCC 0x40610302 with 0x00000000
+Writing SCC 0x40610303 with 0x00000000
+Writing SCC 0x40610304 with 0x384061A8
+Writing SCC 0x40610305 with 0x38407530
+Writing SCC 0x40610306 with 0x384088B8
+Writing SCC 0x40610307 with 0x38409C40
+Writing SCC 0x40610308 with 0x3840AFC8
+Writing SCC 0x40610309 with 0x3840C350
+Writing SCC 0x4061030A with 0x3CF0D6D8
+Writing SCC 0x4061030B with 0x41A0EA60
+Writing SCC 0x4061030C with 0x3840445C
+Writing SCC 0x4061030D with 0x38404E20
+Writing SCC 0x4061030E with 0x384061A8
+Writing SCC 0x4061030F with 0x38407530
+Writing SCC 0x40610310 with 0x384088B8
+Writing SCC 0x40610311 with 0x38409C40
+Writing SCC 0x40610312 with 0x3CF0AFC8
+Writing SCC 0x40610313 with 0x41A0C350
+DB1.0 DCC 0 SCC configuration complete.
+
+DB SMB clock enabled.
+Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...
+Testing SMB clock...
+Configuring MUXFPGA for MB.
+Setting DVI mode for VGA.
+Releasing Daughterboard resets.
+Switching MCC log to UART1.
+
+ARM Versatile Express Boot Monitor
+Version:    V5.1.9
+Build Date: Dec  3 2012
+Daughterboard Site 1: V2P-CA15_A7 Cortex A15
+Daughterboard Site 2: Not Used
+Running boot script from flash - BOOTSCRIPT
+Loaded FDT - tc2_dtb
+Loaded initrd - initrd
+Loaded kernel - zimage
+Booting kernel @ 0x80008000
+Command line 'console=ttyAMA0,38400n8 init=/init androidboot.console=ttyAMA0 rootwait ro mmci.fmax=4000000 init=/init'
+initrd @ 0xa0100000 (296443 bytes)
+FDT @ 0xa0000000 (15001 bytes)
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.10.16-dirty (spica@shamanippon) (gcc version 4.7.3 (Ubuntu/Linaro 4.7.3-1ubuntu1) ) #1 SMP Tue Nov 26 16:54:10 EST 2013
+[    0.000000] CPU: ARMv7 Processor [412fc0f1] revision 1 (ARMv7), cr=50c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: ARM-Versatile Express, model: V2P-CA15_CA7
+[    0.000000] Truncating memory at 0x80000000 to fit in 32-bit physical address space
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+[    0.000000] PERCPU: Embedded 9 pages/cpu @c1681000 s13888 r8192 d14784 u36864
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 522767
+[    0.000000] Kernel command line: console=ttyAMA0,38400n8 init=/init androidboot.console=ttyAMA0 rootwait ro mmci.fmax=4000000 init=/init
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 2032MB = 2032MB total
+[    0.000000] Memory: 2056440k/2056440k available, 40708k reserved, 1302528K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xf0000000 - 0xff000000   ( 240 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xef800000   ( 760 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf800000 - 0xbfe00000   (   6 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc057126c   (5541 kB)
+[    0.000000]       .init : 0xc0572000 - 0xc05c0640   ( 314 kB)
+[    0.000000]       .data : 0xc05c2000 - 0xc0604000   ( 264 kB)
+[    0.000000]        .bss : 0xc0604000 - 0xc066ed8c   ( 428 kB)
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=5.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] GIC physical location is 0x2c001000
+[    0.000000] Architected local timer running at 24.00MHz (virt).
+[    0.000000] Switching to timer-based delay loop
+[    0.000000] sched_clock: ARM arch timer >56 bits at 24000kHz, resolution 41ns
+[    0.000000] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 4294967ms
+[    0.000000] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 178956ms
+[    0.000000] Console: colour dummy device 80x30
+[    4.466276] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
+[    4.466289] pid_max: default: 32768 minimum: 301
+[    4.466436] Mount-cache hash table entries: 512
+[    4.470203] CPU: Testing write buffer coherency: ok
+[    4.470229] ftrace: allocating 20209 entries in 40 pages
+[    4.490843] CPU0: update cpu_power 1441
+[    4.490853] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    4.490875] Setting up static identity map for 0xc03bead0 - 0xc03beb1c
+[    4.490961] ARM CCI driver probed
+[    4.493144] vexpress-spc loaded at f000e000
+[    4.493153] TC2 power management initialized
+[    4.494091] CPU1: failed to boot: -22
+[    4.494407] CPU2: failed to boot: -22
+[    4.494718] CPU3: failed to boot: -22
+[    4.495033] CPU4: failed to boot: -22
+[    4.495079] Brought up 1 CPUs
+[    4.495086] SMP: Total of 1 processors activated (48.00 BogoMIPS).
+[    4.495092] CPU: All CPU(s) started in SVC mode.
+[    4.499864] sched: registering cpufreq notifiers for scale-invariant loads
+[    4.500449] xor: measuring software checksum speed
+[    4.589113]    arm4regs  :  2099.200 MB/sec
+[    4.687561]    8regs     :  1675.600 MB/sec
+[    4.786009]    32regs    :  1377.200 MB/sec
+[    4.786016] xor: using function: arm4regs (2099.200 MB/sec)
+[    4.786566] regulator-dummy: no parameters
+[    4.786943] NET: Registered protocol family 16
+[    4.787139] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    4.788985] hw perfevents: enabled with CCI PMU driver, 5 counters available
+[    4.799567] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    4.799576] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    4.799586] Serial: AMBA PL011 UART driver
+[    4.799656] 1c090000.uart: ttyAMA0 at MMIO 0x1c090000 (irq = 37) is a PL011 rev2
+[    5.964117] console [ttyAMA0] enabled
+[    5.975126] 1c0a0000.uart: ttyAMA1 at MMIO 0x1c0a0000 (irq = 38) is a PL011 rev2
+[    5.997150] 1c0b0000.uart: ttyAMA2 at MMIO 0x1c0b0000 (irq = 39) is a PL011 rev2
+[    6.019730] 1c0c0000.uart: ttyAMA3 at MMIO 0x1c0c0000 (irq = 40) is a PL011 rev2
+[    6.057284] bio: create slab <bio-0> at 0
+[    6.236687] raid6: int32x1    250 MB/s
+[    6.415235] raid6: int32x2    353 MB/s
+[    6.593700] raid6: int32x4    439 MB/s
+[    6.772142] raid6: int32x8    491 MB/s
+[    6.783179] raid6: using algorithm int32x8 (491 MB/s)
+[    6.798059] raid6: using intx1 recovery algorithm
+[    6.812329] 3V3: 3300 mV 
+[    6.820761] SCSI subsystem initialized
+[    6.832717] usbcore: registered new interface driver usbfs
+[    6.849000] usbcore: registered new interface driver hub
+[    6.864794] usbcore: registered new device driver usb
+[    6.880674] Advanced Linux Sound Architecture Driver Initialized.
+[    6.899443] Switching to clocksource arch_sys_counter
+[    6.940167] NET: Registered protocol family 2
+[    6.953375] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[    6.974282] TCP bind hash table entries: 8192 (order: 4, 65536 bytes)
+[    6.993387] TCP: Hash tables configured (established 8192 bind 8192)
+[    7.012157] TCP: reno registered
+[    7.021664] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    7.039131] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    7.058021] NET: Registered protocol family 1
+[    7.071100] RPC: Registered named UNIX socket transport module.
+[    7.088553] RPC: Registered udp transport module.
+[    7.102411] RPC: Registered tcp transport module.
+[    7.116268] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    7.135391] Trying to unpack rootfs image as initramfs...
+[    7.165226] Freeing initrd memory: 288K (e0100000 - e0148000)
+[    7.182323] hw perfevents: enabled with ARMv7_Cortex_A15 PMU driver, 7 counters available
+[    7.206467] hw perfevents: enabled with ARMv7_Cortex_A7 PMU driver, 7 counters available
+[    7.232534] bounce pool size: 64 pages
+[    7.243700] VFS: Disk quotas dquot_6.5.2
+[    7.255317] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    7.275167] NFS: Registering the id_resolver key type
+[    7.290101] Key type id_resolver registered
+[    7.302423] Key type id_legacy registered
+[    7.314252] jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    7.335127] fuse init (API version 7.22)
+[    7.346934] bio: create slab <bio-1> at 1
+[    7.359010] Btrfs loaded
+[    7.366464] msgmni has been set to 1473
+[    7.378482] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    7.400294] io scheduler noop registered
+[    7.411846] io scheduler deadline registered
+[    7.424436] io scheduler cfq registered (default)
+[    7.447716] hdlcd 2b000000.hdlcd: HDLCD: found ARM HDLCD version r0p0
+[    7.466711] hdlcd 2b000000.hdlcd: using 1024x768-16@60 mode
+[    7.544127] A15 Vcore: 800 <--> 1050 mV at 897 mV 
+[    7.573664] A7 Vcore: 800 <--> 1050 mV at 901 mV 
+[    7.603171] VIO: at 1793 mV 
+[    7.681162] brd: module loaded
+[    7.694502] loop: module loaded
+[    7.704707] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    7.724124] smsc911x: Driver version 2008-10-21
+[    7.737613] smsc911x 1a000000.ethernet (unregistered net_device): couldn't get clock -2
+[    7.762325] libphy: smsc911x-mdio: probed
+[    7.774194] smsc911x 1a000000.ethernet eth0: attached PHY driver [Generic PHY] (mii_bus:phy_addr=1a000000.etherne:01, irq=-1)
+[    7.807722] smsc911x 1a000000.ethernet eth0: MAC Address: 00:02:f7:00:52:1f
+[    7.828707] nxp-isp1760 1b000000.usb: NXP ISP1760 USB Host Controller
+[    7.847716] nxp-isp1760 1b000000.usb: new USB bus registered, assigned bus number 1
+[    8.067124] nxp-isp1760 1b000000.usb: bus width: 32, oc: digital
+[    8.104523] nxp-isp1760 1b000000.usb: irq 48, io mem 0x1b000000
+[    8.121980] nxp-isp1760 1b000000.usb: USB ISP 1761 HW rev. 1 started
+[    8.141163] hub 1-0:1.0: USB hub found
+[    8.152269] hub 1-0:1.0: 1 port detected
+[    8.164221] usbcore: registered new interface driver usb-storage
+[    8.182706] mousedev: PS/2 mouse device common for all mice
+[    8.200017] rtc-pl031 1c170000.rtc: rtc core: registered pl031 as rtc0
+[    8.221309] device-mapper: ioctl: 4.24.0-ioctl (2013-01-15) initialised: dm-devel@redhat.com
+[    8.246292] cpu cpu0: bL_cpufreq_init: CPU 0 initialized
+[    8.262868] arm_big_little: bL_cpufreq_register: Registered platform driver: vexpress-bL
+[    8.287037] cpuidle: using governor ladder
+[    8.299109] cpuidle: using governor menu
+[    8.310660] CPUidle for CPU0 registered
+[    8.322218] mmci-pl18x 1c050000.mmci: mmc0: PL180 manf 41 rev0 at 0x1c050000 irq 41,42 (pio)
+[    8.387762] ledtrig-cpu: registered to indicate activity on CPUs
+[    8.405903] usbcore: registered new interface driver usbhid
+[    8.422344] usbhid: USB HID core driver
+[    8.433674] nxp-isp1760 1b000000.usb: port 1 high speed
+[    8.452471] ashmem: initialized
+[    8.461874] logger: created 256K log 'log_main'
+[    8.475434] logger: created 256K log 'log_events'
+[    8.489449] logger: created 256K log 'log_radio'
+[    8.503135] usb 1-1: new high-speed USB device number 2 using nxp-isp1760
+[    8.523296] logger: created 256K log 'log_system'
+[    8.547914] aaci-pl041 1c040000.aaci: ARM AC'97 Interface PL041 rev0 at 0x1c040000, irq 43
+[    8.572305] aaci-pl041 1c040000.aaci: FIFO 512 entries
+[    8.587531] nxp-isp1760 1b000000.usb: port 1 high speed
+[    8.603464] oprofile: using timer interrupt.
+[    8.616172] TCP: cubic registered
+[    8.625928] Initializing XFRM netlink socket
+[    8.638542] NET: Registered protocol family 10
+[    8.652066] NET: Registered protocol family 17
+[    8.665175] NET: Registered protocol family 15
+[    8.678310] Key type dns_resolver registered
+[    8.690947] VFP support v0.3: implementor 41 architecture 4 part 30 variant f rev 0
+[    8.713538] Registering SWP/SWPB emulation handler
+[    8.728266] rtc-pl031 1c170000.rtc: setting system clock to 2014-01-09 20:54:15 UTC (1389300855)
+[    8.754240] ALSA device list:
+[    8.762981]   #0: ARM AC'97 Interface PL041 rev0 at 0x1c040000, irq 43
+[    8.782450] Freeing unused kernel memory: 312K (c0572000 - c05c0000)
+[    8.803479] SELinux:  Could not mount selinuxfs:  No such device
+[    8.821258] hub 1-1:1.0: USB hub found
+[    8.832359] hub 1-1:1.0: 3 ports detected
+[    8.845593] init: could not import file '/init.partitions.rc' from '/init.rc'
+[    8.867044] init (1): /proc/1/oom_adj is deprecated, please use /proc/1/oom_score_adj instead.
+[    8.894149] mmc0: new SDHC card at address b368
+[    8.911038] mmcblk0: mmc0:b368 SD08G 7.45 GiB 
+[    8.935218]  mmcblk0: p1 p2 p3 p4 < p5 p6 >
+[    9.140675] usb 1-1.2: new low-speed USB device number 3 using nxp-isp1760
+[    9.179199] atkbd serio0: keyboard reset failed on 1c060000.kmi
+[    9.486620] input: Logitech USB Optical Mouse as /devices/smb.24/motherboard.25/1b000000.usb/usb1/1-1/1-1.2/1-1.2:1.0/input/input0
+[    9.521865] hid-generic 0003:046D:C05A.0001: input: USB HID v1.11 Mouse [Logitech USB Optical Mouse] on usb-1b000000.usb-1.2/input0
+[    9.630284] usb 1-1.3: new low-speed USB device number 4 using nxp-isp1760
+[    9.698512] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    9.723496] EXT4-fs (mmcblk0p3): Ignoring removed nomblk_io_submit option
+[    9.770086] input: Dell Dell USB Entry Keyboard as /devices/smb.24/motherboard.25/1b000000.usb/usb1/1-1/1-1.3/1-1.3:1.0/input/input1
+[    9.805567] hid-generic 0003:413C:2107.0002: input: USB HID v1.10 Keyboard [Dell Dell USB Entry Keyboard] on usb-1b000000.usb-1.3/input0
+[   10.368207] atkbd serio1: keyboard reset failed on 1c070000.kmi
+[   11.420155] EXT4-fs (mmcblk0p3): recovery complete
+[   11.893965] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: nomblk_io_submit,errors=panic
+[   11.924941] EXT4-fs (mmcblk0p5): Ignoring removed nomblk_io_submit option
+[   17.501385] EXT4-fs (mmcblk0p5): 1 orphan inode deleted
+[   17.516796] EXT4-fs (mmcblk0p5): recovery complete
+[   18.809803] EXT4-fs (mmcblk0p5): mounted filesystem with ordered data mode. Opts: nomblk_io_submit,errors=panic
+[   18.947070] lowmemorykiller: lowmem_shrink: convert oom_adj to oom_score_adj:
+[   18.968115] lowmemorykiller: oom_adj 0 => oom_score_adj 0
+[   18.984033] lowmemorykiller: oom_adj 1 => oom_score_adj 58
+[   19.000207] lowmemorykiller: oom_adj 2 => oom_score_adj 117
+[   19.016628] lowmemorykiller: oom_adj 4 => oom_score_adj 235
+[   19.033049] lowmemorykiller: oom_adj 7 => oom_score_adj 411
+[   19.049471] lowmemorykiller: oom_adj 15 => oom_score_adj 1000
+[   19.261510] gator: version magic '3.10.16-00363-gb660011 SMP mod_unload ARMv7 thumb2 p2v8 ' should be '3.10.16-dirty SMP mod_unload ARMv7 thumb2 p2v8 '
+[   19.328682] init: cannot find '/system/bin/rild', disabling 'ril-daemon'
+[   19.374792] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+[   21.360678] smsc911x 1a000000.ethernet eth0: SMSC911x/921x identified at 0xf00e0000, IRQ: 47
+[   21.507330] IPv6: eth0: IPv6 duplicate address fe80::202:f7ff:fe00:521f detected!
+root@vexpress:/ # 
+
+ARM V2M Boot loader v1.1.2
+HBI0190 build 2313
+
+ARM V2M Firmware v3.1.2
+Build Date: Apr 16 2013
+
+Date: Thu 09 Jan 2014
+Time:     22:08:01    
+
+Cmd> 
+Powering up system...
+Daughterboard fitted to site 1.
+
+Switching on ATXPSU...
+ATX3V3: ON
+VIOset: 1.8V
+MBtemp: 32 degC
+
+Configuring motherboard (rev D, var A)...
+IOFPGA  config: PASSED
+MUXFPGA config: PASSED
+OSC CLK config: PASSED
+
+Testing SMC devices (FPGA build 16)...
+SRAM 32MB test: PASSED
+VRAM  8MB test: PASSED
+LAN9118   test: PASSED
+USB & OTG test: PASSED
+KMI1/KMI2 test: PASSED
+MMC & SD  test: PASSED
+DVI image test: PASSED
+AACI AC97 test: PASSED
+CF card   test: PASSED
+UART port test: PASSED
+MAC addrs test: PASSED
+
+Reading Site 1 Board File \SITE1\HBI0249A\board.txt
+DB1 JTAG configuration complete.
+Setting DB1 OSCCLKS...
+DB1.0 DCC 0 SPI configuration complete.
+
+Writing SCC 0x40610007 with 0xFF00FF00
+Writing SCC 0x40610046 with 0x01CD1011
+Writing SCC 0x406101C0 with 0x0001F001
+Writing SCC 0x40610100 with 0x33330C00
+Writing SCC 0x40610048 with 0x022F1010
+Writing SCC 0x40610049 with 0x0011710D
+Writing SCC 0x4061004A with 0x022F1010
+Writing SCC 0x4061004B with 0x0011710D
+Writing SCC 0x4061004C with 0x022F1010
+Writing SCC 0x4061004D with 0x0011710D
+Writing SCC 0x4061004E with 0x022F1010
+Writing SCC 0x4061004F with 0x0011710D
+Writing SCC 0x40610300 with 0x00000007
+Writing SCC 0x40610301 with 0x060E0356
+Writing SCC 0x40610302 with 0x00000000
+Writing SCC 0x40610303 with 0x00000000
+Writing SCC 0x40610304 with 0x384061A8
+Writing SCC 0x40610305 with 0x38407530
+Writing SCC 0x40610306 with 0x384088B8
+Writing SCC 0x40610307 with 0x38409C40
+Writing SCC 0x40610308 with 0x3840AFC8
+Writing SCC 0x40610309 with 0x3840C350
+Writing SCC 0x4061030A with 0x3CF0D6D8
+Writing SCC 0x4061030B with 0x41A0EA60
+Writing SCC 0x4061030C with 0x3840445C
+Writing SCC 0x4061030D with 0x38404E20
+Writing SCC 0x4061030E with 0x384061A8
+Writing SCC 0x4061030F with 0x38407530
+Writing SCC 0x40610310 with 0x384088B8
+Writing SCC 0x40610311 with 0x38409C40
+Writing SCC 0x40610312 with 0x3CF0AFC8
+Writing SCC 0x40610313 with 0x41A0C350
+DB1.0 DCC 0 SCC configuration complete.
+
+DB SMB clock enabled.
+Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...Waiting for SITE1 CB_READY...
+Testing SMB clock...
+Configuring MUXFPGA for MB.
+Setting DVI mode for VGA.
+Releasing Daughterboard resets.
+Switching MCC log to UART1.
+
+ARM Versatile Express Boot Monitor
+Version:    V5.1.9
+Build Date: Dec  3 2012
+Daughterboard Site 1: V2P-CA15_A7 Cortex A15
+Daughterboard Site 2: Not Used
+Running boot script from flash - BOOTSCRIPT
+Loaded FDT - tc2_dtb
+Loaded initrd - initrd
+Loaded kernel - zimage
+Booting kernel @ 0x80008000
+Command line 'console=ttyAMA0,38400n8 init=/init androidboot.console=ttyAMA0 rootwait ro mmci.fmax=4000000 init=/init'
+initrd @ 0xa0100000 (296443 bytes)
+FDT @ 0xa0000000 (15001 bytes)
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Linux version 3.10.16-dirty (spica@shamanippon) (gcc version 4.7.3 (Ubuntu/Linaro 4.7.3-1ubuntu1) ) #1 SMP Tue Nov 26 16:54:10 EST 2013
+[    0.000000] CPU: ARMv7 Processor [412fc0f1] revision 1 (ARMv7), cr=50c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine: ARM-Versatile Express, model: V2P-CA15_CA7
+[    0.000000] Truncating memory at 0x80000000 to fit in 32-bit physical address space
+[    0.000000] Memory policy: ECC disabled, Data cache writealloc
+[    0.000000] PERCPU: Embedded 9 pages/cpu @c1681000 s13888 r8192 d14784 u36864
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 522767
+[    0.000000] Kernel command line: console=ttyAMA0,38400n8 init=/init androidboot.console=ttyAMA0 rootwait ro mmci.fmax=4000000 init=/init
+[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+[    0.000000] Memory: 2032MB = 2032MB total
+[    0.000000] Memory: 2056440k/2056440k available, 40708k reserved, 1302528K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     vmalloc : 0xf0000000 - 0xff000000   ( 240 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xef800000   ( 760 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf800000 - 0xbfe00000   (   6 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc057126c   (5541 kB)
+[    0.000000]       .init : 0xc0572000 - 0xc05c0640   ( 314 kB)
+[    0.000000]       .data : 0xc05c2000 - 0xc0604000   ( 264 kB)
+[    0.000000]        .bss : 0xc0604000 - 0xc066ed8c   ( 428 kB)
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=5.
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] GIC physical location is 0x2c001000
+[    0.000000] Architected local timer running at 24.00MHz (virt).
+[    0.000000] Switching to timer-based delay loop
+[    0.000000] sched_clock: ARM arch timer >56 bits at 24000kHz, resolution 41ns
+[    0.000000] sched_clock: 32 bits at 1000kHz, resolution 1000ns, wraps every 4294967ms
+[    0.000000] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 178956ms
+[    0.000000] Console: colour dummy device 80x30
+[    4.466278] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)
+[    4.466291] pid_max: default: 32768 minimum: 301
+[    4.466438] Mount-cache hash table entries: 512
+[    4.470211] CPU: Testing write buffer coherency: ok
+[    4.470237] ftrace: allocating 20209 entries in 40 pages
+[    4.490855] CPU0: update cpu_power 1441
+[    4.490865] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    4.490887] Setting up static identity map for 0xc03bead0 - 0xc03beb1c
+[    4.490973] ARM CCI driver probed
+[    4.493218] vexpress-spc loaded at f000e000
+[    4.493226] TC2 power management initialized
+[    4.494165] CPU1: failed to boot: -22
+[    4.494479] CPU2: failed to boot: -22
+[    4.494791] CPU3: failed to boot: -22
+[    4.495106] CPU4: failed to boot: -22
+[    4.495151] Brought up 1 CPUs
+[    4.495158] SMP: Total of 1 processors activated (48.00 BogoMIPS).
+[    4.495163] CPU: All CPU(s) started in SVC mode.
+[    4.499921] sched: registering cpufreq notifiers for scale-invariant loads
+[    4.500525] xor: measuring software checksum speed
+[    4.598970]    arm4regs  :  2099.200 MB/sec
+[    4.697419]    8regs     :  1675.600 MB/sec
+[    4.795867]    32regs    :  1377.200 MB/sec
+[    4.795874] xor: using function: arm4regs (2099.200 MB/sec)
+[    4.796427] regulator-dummy: no parameters
+[    4.796800] NET: Registered protocol family 16
+[    4.797001] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    4.798856] hw perfevents: enabled with CCI PMU driver, 5 counters available
+[    4.809442] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+[    4.809450] hw-breakpoint: maximum watchpoint size is 8 bytes.
+[    4.809460] Serial: AMBA PL011 UART driver
+[    4.809527] 1c090000.uart: ttyAMA0 at MMIO 0x1c090000 (irq = 37) is a PL011 rev2
+[    5.973989] console [ttyAMA0] enabled
+[    5.984997] 1c0a0000.uart: ttyAMA1 at MMIO 0x1c0a0000 (irq = 38) is a PL011 rev2
+[    6.007023] 1c0b0000.uart: ttyAMA2 at MMIO 0x1c0b0000 (irq = 39) is a PL011 rev2
+[    6.029607] 1c0c0000.uart: ttyAMA3 at MMIO 0x1c0c0000 (irq = 40) is a PL011 rev2
+[    6.067164] bio: create slab <bio-0> at 0
+[    6.246468] raid6: int32x1    256 MB/s
+[    6.424970] raid6: int32x2    360 MB/s
+[    6.603442] raid6: int32x4    439 MB/s
+[    6.781910] raid6: int32x8    491 MB/s
+[    6.792946] raid6: using algorithm int32x8 (491 MB/s)
+[    6.807826] raid6: using intx1 recovery algorithm
+[    6.822094] 3V3: 3300 mV 
+[    6.830524] SCSI subsystem initialized
+[    6.842477] usbcore: registered new interface driver usbfs
+[    6.858762] usbcore: registered new interface driver hub
+[    6.874554] usbcore: registered new device driver usb
+[    6.890429] Advanced Linux Sound Architecture Driver Initialized.
+[    6.909196] Switching to clocksource arch_sys_counter
+[    6.949916] NET: Registered protocol family 2
+[    6.963122] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[    6.984030] TCP bind hash table entries: 8192 (order: 4, 65536 bytes)
+[    7.003136] TCP: Hash tables configured (established 8192 bind 8192)
+[    7.021905] TCP: reno registered
+[    7.031413] UDP hash table entries: 512 (order: 2, 16384 bytes)
+[    7.048881] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes)
+[    7.067773] NET: Registered protocol family 1
+[    7.080849] RPC: Registered named UNIX socket transport module.
+[    7.098304] RPC: Registered udp transport module.
+[    7.112162] RPC: Registered tcp transport module.
+[    7.126018] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    7.145141] Trying to unpack rootfs image as initramfs...
+[    7.174994] Freeing initrd memory: 288K (e0100000 - e0148000)
+[    7.192087] hw perfevents: enabled with ARMv7_Cortex_A15 PMU driver, 7 counters available
+[    7.216231] hw perfevents: enabled with ARMv7_Cortex_A7 PMU driver, 7 counters available
+[    7.242287] bounce pool size: 64 pages
+[    7.253453] VFS: Disk quotas dquot_6.5.2
+[    7.265069] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    7.284917] NFS: Registering the id_resolver key type
+[    7.299835] Key type id_resolver registered
+[    7.312158] Key type id_legacy registered
+[    7.323987] jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    7.344862] fuse init (API version 7.22)
+[    7.356668] bio: create slab <bio-1> at 1
+[    7.368741] Btrfs loaded
+[    7.376193] msgmni has been set to 1473
+[    7.388212] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+[    7.410025] io scheduler noop registered
+[    7.421576] io scheduler deadline registered
+[    7.434166] io scheduler cfq registered (default)
+[    7.457459] hdlcd 2b000000.hdlcd: HDLCD: found ARM HDLCD version r0p0
+[    7.476452] hdlcd 2b000000.hdlcd: using 1024x768-16@60 mode
+[    7.553882] A15 Vcore: 800 <--> 1050 mV at 900 mV 
+[    7.583421] A7 Vcore: 800 <--> 1050 mV at 902 mV 
+[    7.612927] VIO: at 1792 mV 
+[    7.690992] brd: module loaded
+[    7.704352] loop: module loaded
+[    7.714556] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    7.733969] smsc911x: Driver version 2008-10-21
+[    7.747458] smsc911x 1a000000.ethernet (unregistered net_device): couldn't get clock -2
+[    7.772172] libphy: smsc911x-mdio: probed
+[    7.784042] smsc911x 1a000000.ethernet eth0: attached PHY driver [Generic PHY] (mii_bus:phy_addr=1a000000.etherne:01, irq=-1)
+[    7.817571] smsc911x 1a000000.ethernet eth0: MAC Address: 00:02:f7:00:52:1f
+[    7.838549] nxp-isp1760 1b000000.usb: NXP ISP1760 USB Host Controller
+[    7.857556] nxp-isp1760 1b000000.usb: new USB bus registered, assigned bus number 1
+[    8.076965] nxp-isp1760 1b000000.usb: bus width: 32, oc: digital
+[    8.114365] nxp-isp1760 1b000000.usb: irq 48, io mem 0x1b000000
+[    8.131822] nxp-isp1760 1b000000.usb: USB ISP 1761 HW rev. 1 started
+[    8.151004] hub 1-0:1.0: USB hub found
+[    8.162111] hub 1-0:1.0: 1 port detected
+[    8.174145] usbcore: registered new interface driver usb-storage
+[    8.192568] mousedev: PS/2 mouse device common for all mice
+[    8.209863] rtc-pl031 1c170000.rtc: rtc core: registered pl031 as rtc0
+[    8.231155] device-mapper: ioctl: 4.24.0-ioctl (2013-01-15) initialised: dm-devel@redhat.com
+[    8.256136] cpu cpu0: bL_cpufreq_init: CPU 0 initialized
+[    8.272709] arm_big_little: bL_cpufreq_register: Registered platform driver: vexpress-bL
+[    8.296880] cpuidle: using governor ladder
+[    8.308951] cpuidle: using governor menu
+[    8.320503] CPUidle for CPU0 registered
+[    8.332062] mmci-pl18x 1c050000.mmci: mmc0: PL180 manf 41 rev0 at 0x1c050000 irq 41,42 (pio)
+[    8.397503] ledtrig-cpu: registered to indicate activity on CPUs
+[    8.415647] usbcore: registered new interface driver usbhid
+[    8.432086] usbhid: USB HID core driver
+[    8.443417] nxp-isp1760 1b000000.usb: port 1 high speed
+[    8.462214] ashmem: initialized
+[    8.471617] logger: created 256K log 'log_main'
+[    8.485178] logger: created 256K log 'log_events'
+[    8.499193] logger: created 256K log 'log_radio'
+[    8.512878] usb 1-1: new high-speed USB device number 2 using nxp-isp1760
+[    8.533040] logger: created 256K log 'log_system'
+[    8.557702] aaci-pl041 1c040000.aaci: ARM AC'97 Interface PL041 rev0 at 0x1c040000, irq 43
+[    8.582093] aaci-pl041 1c040000.aaci: FIFO 512 entries
+[    8.597319] nxp-isp1760 1b000000.usb: port 1 high speed
+[    8.613254] oprofile: using timer interrupt.
+[    8.625962] TCP: cubic registered
+[    8.635720] Initializing XFRM netlink socket
+[    8.648335] NET: Registered protocol family 10
+[    8.661858] NET: Registered protocol family 17
+[    8.674965] NET: Registered protocol family 15
+[    8.688105] Key type dns_resolver registered
+[    8.700742] VFP support v0.3: implementor 41 architecture 4 part 30 variant f rev 0
+[    8.723332] Registering SWP/SWPB emulation handler
+[    8.738067] rtc-pl031 1c170000.rtc: setting system clock to 2014-01-09 22:08:20 UTC (1389305300)
+[    8.764041] ALSA device list:
+[    8.772780]   #0: ARM AC'97 Interface PL041 rev0 at 0x1c040000, irq 43
+[    8.792251] Freeing unused kernel memory: 312K (c0572000 - c05c0000)
+[    8.813250] hub 1-1:1.0: USB hub found
+[    8.824431] SELinux:  Could not mount selinuxfs:  No such device
+[    8.842140] hub 1-1:1.0: 3 ports detected
+[    8.855372] init: could not import file '/init.partitions.rc' from '/init.rc'
+[    8.876824] init (1): /proc/1/oom_adj is deprecated, please use /proc/1/oom_score_adj instead.
+[    8.903928] mmc0: new SDHC card at address b368
+[    8.920813] mmcblk0: mmc0:b368 SD08G 7.45 GiB 
+[    8.944960]  mmcblk0: p1 p2 p3 p4 < p5 p6 >
+[    9.150425] usb 1-1.2: new low-speed USB device number 3 using nxp-isp1760
+[    9.188996] atkbd serio0: keyboard reset failed on 1c060000.kmi
+[    9.491324] input: Logitech USB Optical Mouse as /devices/smb.24/motherboard.25/1b000000.usb/usb1/1-1/1-1.2/1-1.2:1.0/input/input0
+[    9.526461] hid-generic 0003:046D:C05A.0001: input: USB HID v1.11 Mouse [Logitech USB Optical Mouse] on usb-1b000000.usb-1.2/input0
+[    9.640015] usb 1-1.3: new low-speed USB device number 4 using nxp-isp1760
+[    9.699448] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    9.724466] EXT4-fs (mmcblk0p3): Ignoring removed nomblk_io_submit option
+[    9.769775] input: Dell Dell USB Entry Keyboard as /devices/smb.24/motherboard.25/1b000000.usb/usb1/1-1/1-1.3/1-1.3:1.0/input/input1
+[    9.805378] hid-generic 0003:413C:2107.0002: input: USB HID v1.10 Keyboard [Dell Dell USB Entry Keyboard] on usb-1b000000.usb-1.3/input0
+[   10.377964] atkbd serio1: keyboard reset failed on 1c070000.kmi
+[   11.427200] EXT4-fs (mmcblk0p3): recovery complete
+[   11.444104] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: nomblk_io_submit,errors=panic
+[   11.474938] EXT4-fs (mmcblk0p5): Ignoring removed nomblk_io_submit option
+[   12.913836] EXT4-fs (mmcblk0p5): recovery complete
+[   12.930768] EXT4-fs (mmcblk0p5): mounted filesystem with ordered data mode. Opts: nomblk_io_submit,errors=panic
+[   13.084665] lowmemorykiller: lowmem_shrink: convert oom_adj to oom_score_adj:
+[   13.105721] lowmemorykiller: oom_adj 0 => oom_score_adj 0
+[   13.121629] lowmemorykiller: oom_adj 1 => oom_score_adj 58
+[   13.137791] lowmemorykiller: oom_adj 2 => oom_score_adj 117
+[   13.154211] lowmemorykiller: oom_adj 4 => oom_score_adj 235
+[   13.170628] lowmemorykiller: oom_adj 7 => oom_score_adj 411
+[   13.187046] lowmemorykiller: oom_adj 15 => oom_score_adj 1000
+[   13.399079] gator: version magic '3.10.16-00363-gb660011 SMP mod_unload ARMv7 thumb2 p2v8 ' should be '3.10.16-dirty SMP mod_unload ARMv7 thumb2 p2v8 '
+[   13.466245] init: cannot find '/system/bin/rild', disabling 'ril-daemon'
+[   13.815108] init: cannot find '/system/etc/install-recovery.sh', disabling 'flash_recovery'
+[   15.383086] smsc911x 1a000000.ethernet eth0: SMSC911x/921x identified at 0xf00e0000, IRQ: 47
+root@vexpress:/ # [   59.386868] warning: `zygote' uses 32-bit capabilities (legacy support in use)
+[   83.308400] lowmemorykiller: lowmem_shrink: convert oom_adj to oom_score_adj:
+[   83.329529] lowmemorykiller: oom_adj 0 => oom_score_adj 0
+[   83.345487] lowmemorykiller: oom_adj 1 => oom_score_adj 58
+[   83.361706] lowmemorykiller: oom_adj 2 => oom_score_adj 117
+[   83.378174] lowmemorykiller: oom_adj 4 => oom_score_adj 235
+[   83.394652] lowmemorykiller: oom_adj 9 => oom_score_adj 529
+[   83.411185] lowmemorykiller: oom_adj 15 => oom_score_adj 1000
+[  104.744966] FAT-fs (mmcblk0p6): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+[  106.599909] ------------[ cut here ]------------
+[  106.613603] WARNING: at mm/slab_common.c:377 kmalloc_slab+0x59/0x70()
+[  106.632640] Modules linked in:
+[  106.641690] CPU: 0 PID: 2357 Comm: Signal Catcher Not tainted 3.10.16-dirty #1
+[  106.662992] [<c0011cbd>] (unwind_backtrace+0x1/0x9c) from [<c000fc01>] (show_stack+0x11/0x14)
+[  106.688133] [<c000fc01>] (show_stack+0x11/0x14) from [<c001c4a5>] (warn_slowpath_common+0x39/0x54)
+[  106.714558] [<c001c4a5>] (warn_slowpath_common+0x39/0x54) from [<c001c4d7>] (warn_slowpath_null+0x17/0x1c)
+[  106.743040] [<c001c4d7>] (warn_slowpath_null+0x17/0x1c) from [<c0097229>] (kmalloc_slab+0x59/0x70)
+[  106.769460] [<c0097229>] (kmalloc_slab+0x59/0x70) from [<c00a9ae3>] (__kmalloc+0x17/0xdc)
+[  106.793577] [<c00a9ae3>] (__kmalloc+0x17/0xdc) from [<c00c294d>] (seq_read+0x18d/0x2e8)
+[  106.817181] [<c00c294d>] (seq_read+0x18d/0x2e8) from [<c00acf5b>] (vfs_read+0x63/0xd8)
+[  106.840524] [<c00acf5b>] (vfs_read+0x63/0xd8) from [<c00ad0af>] (SyS_read+0x2f/0x50)
+[  106.863354] [<c00ad0af>] (SyS_read+0x2f/0x50) from [<c000ce01>] (ret_fast_syscall+0x1/0x46)
+[  106.887974] ---[ end trace ae3a91a339565307 ]---
+[  108.626015] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
+[  109.462475] bio: create slab <bio-2> at 2
+[  110.164714] EXT4-fs (dm-0): mounted filesystem without journal. Opts: (null)
+[  120.373615] EXT4-fs (dm-0): re-mounted. Opts: (null)
+[  121.925594] EXT4-fs (dm-0): re-mounted. Opts: (null)
+[  122.838678] EXT4-fs (dm-1): mounted filesystem without journal. Opts: (null)
+[  133.780863] EXT4-fs (dm-1): re-mounted. Opts: (null)
+[  133.804640] EXT4-fs (dm-1): re-mounted. Opts: (null)
+
+root@vexpress:/ # cd data
+root@vexpress:/data # insmod / rearoot@vexpress:/data # insmod read_power.ko                                      
+[  237.926663] read_power: Unknown symbol __aeabi_uldivmod (err 0)
+insmod: init_module 'read_power.ko' failed (No such file or directory)
+255|root@vexpress:/data # t rm power.t          rmmod rea255|root@vexpress:/data # rmmod read_power.ko                                   
+rmmod: delete_module 'read_power' failed (errno 2)
+255|root@vexpress:/data # 255|root@vexpress:/data # rmmod read_power.ko                                  255|root@vexpress:/data # insmod read_power.ko                                 
+[ 1841.475761] in readpw init
+[ 1841.483292] in ifroot@vexpress:/data # root@vexpress:/data # insmod read_power.ko                                     root@vexpress:/data # rmmod read_power.ko                                      
+root@vexpress:/data # vi powerroot@vexpress:/data # vi power.txt                                              
+[?1h=[1;24r[m[m[0m[H[J[24;1H"power.txt" 10000L, 179059C[1;1H777345850 0x41A0C350
+794388641 0x001BC4ED
+814381016 0x001C8B8F
+834368475 0x001E244E
+854371600 0x001F0C05
+874396016 0x001F10A3
+659212017 0x00102770
+672125892 0x000D94F4
+694206142 0x000DB374
+714152850 0x000D8EB8
+734150184 0x000DA243
+754175142 0x000D7D89
+774207267 0x000E00D3
+794263809 0x000D8552
+814159017 0x000E182C
+834156559 0x000E2472
+854158892 0x000E31F2
+874152267 0x000D9111
+894210267 0x000D9111
+914204476 0x000D9111
+934206017 0x000DA243
+954207017 0x000D974F
+974144142 0x000DA87D[24;63H1,1[11CTop[1;1H[24;53H:[1;1H[24;1H[K[24;1H:q[?1l>[24;1H[K[24;1Hroot@vexpress:/data # root@vexpress:/data # vi power.txt                                             root@vexpress:/data # rmmod read_power.ko                                      root@vexpress:/data # insmod read_power.ko                                     
+in readpw init
+[ 2148.064349] in ifroot@vexpress:/data # root@vexpress:/data # insmod read_power.ko                                     root@vexpress:/data # vi power.txt                                             root@vexpress:/data # insmod read_power.ko                                     root@vexpress:/data # vi power.txt                                             root@vexpress:/data # rmmod read_power.ko                                      
+root@vexpress:/data # vi powerroot@vexpress:/data # vi power.txt                                              
+[?1h=[1;24r[m[m[0m[H[J[24;1H"power.txt" 11278L, 179059C[1;1H1389307483343444790 0x000DA87D
+1389307483364210123 0x000D8620
+1389307483384197498 0x000D8C5E
+1389307483404177331 0x000D8EB8
+1389307483424204956 0x000DA9F6
+1389307483444184748 0x000D94F4
+1389307483464176665 0x000DA61F
+1389307483484187790 0x000DAADC
+1389307483504184165 0x000DA243
+1389307483524186665 0x000D9D8A
+1389307483544186498 0x000D9FE6
+1389307483564188790 0x000D9FE6
+1389307483584188207 0x000D94F4
+1389307483604188623 0x000D974F
+1389307483624371665 0x000D94F4
+1389307483644190248 0x000E1205
+1389307483664179707 0x000DA87D
+1389307483684185873 0x000D9FE6
+1389307483704187415 0x000D98D1
+1389307483724189790 0x000D9D8A
+1389307483744189415 0x000D974F
+1389307483764189957 0x000D9D8A
+1389307483784190498 0x000D99AA[24;63H1,1[11CTop[1;1H[24;53H:[1;1H[24;1H[K[24;1H:q[?1l>[24;1H[K[24;1Hroot@vexpress:/data # 

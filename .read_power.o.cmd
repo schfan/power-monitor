@@ -609,6 +609,151 @@ deps_/home/spica/work/vexpress/code/power_monitor/read_power.o := \
     $(wildcard include/config/arch/have/nmi/safe/cmpxchg.h) \
   include/linux/delay.h \
   /home/spica/work/linaro-kernel/arch/arm/include/asm/delay.h \
+  include/linux/syscalls.h \
+    $(wildcard include/config/ftrace/syscalls.h) \
+    $(wildcard include/config/old/sigsuspend.h) \
+    $(wildcard include/config/old/sigsuspend3.h) \
+    $(wildcard include/config/odd/rt/sigaction.h) \
+    $(wildcard include/config/clone/backwards.h) \
+    $(wildcard include/config/clone/backwards3.h) \
+  /home/spica/work/linaro-kernel/include/uapi/linux/aio_abi.h \
+  /home/spica/work/linaro-kernel/include/uapi/linux/unistd.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/unistd.h \
+    $(wildcard include/config/oabi/compat.h) \
+  /home/spica/work/linaro-kernel/arch/arm/include/uapi/asm/unistd.h \
+  include/trace/syscall.h \
+  include/linux/ftrace_event.h \
+  include/linux/ring_buffer.h \
+    $(wildcard include/config/ring/buffer/allow/swap.h) \
+  include/linux/kmemcheck.h \
+  include/linux/mm.h \
+    $(wildcard include/config/x86.h) \
+    $(wildcard include/config/ppc.h) \
+    $(wildcard include/config/parisc.h) \
+    $(wildcard include/config/metag.h) \
+    $(wildcard include/config/ksm.h) \
+    $(wildcard include/config/debug/vm/rb.h) \
+    $(wildcard include/config/arch/uses/numa/prot/none.h) \
+    $(wildcard include/config/debug/pagealloc.h) \
+    $(wildcard include/config/hibernation.h) \
+    $(wildcard include/config/hugetlbfs.h) \
+  include/linux/debug_locks.h \
+    $(wildcard include/config/debug/locking/api/selftests.h) \
+  include/linux/range.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/pgtable.h \
+    $(wildcard include/config/highpte.h) \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/proc-fns.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/glue-proc.h \
+    $(wildcard include/config/cpu/arm7tdmi.h) \
+    $(wildcard include/config/cpu/arm720t.h) \
+    $(wildcard include/config/cpu/arm740t.h) \
+    $(wildcard include/config/cpu/arm9tdmi.h) \
+    $(wildcard include/config/cpu/arm920t.h) \
+    $(wildcard include/config/cpu/arm922t.h) \
+    $(wildcard include/config/cpu/arm925t.h) \
+    $(wildcard include/config/cpu/arm926t.h) \
+    $(wildcard include/config/cpu/arm940t.h) \
+    $(wildcard include/config/cpu/arm946e.h) \
+    $(wildcard include/config/cpu/arm1020.h) \
+    $(wildcard include/config/cpu/arm1020e.h) \
+    $(wildcard include/config/cpu/arm1022.h) \
+    $(wildcard include/config/cpu/arm1026.h) \
+    $(wildcard include/config/cpu/mohawk.h) \
+    $(wildcard include/config/cpu/feroceon.h) \
+    $(wildcard include/config/cpu/v6k.h) \
+    $(wildcard include/config/cpu/v7.h) \
+    $(wildcard include/config/cpu/pj4b.h) \
+  include/asm-generic/pgtable-nopud.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/pgtable-hwdef.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/pgtable-2level-hwdef.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/pgtable-2level.h \
+  include/asm-generic/pgtable.h \
+  include/linux/page-flags.h \
+    $(wildcard include/config/pageflags/extended.h) \
+    $(wildcard include/config/arch/uses/pg/uncached.h) \
+    $(wildcard include/config/memory/failure.h) \
+    $(wildcard include/config/swap.h) \
+  include/linux/huge_mm.h \
+  include/linux/vmstat.h \
+    $(wildcard include/config/vm/event/counters.h) \
+  include/linux/vm_event_item.h \
+  include/linux/seq_file.h \
+  include/linux/poll.h \
+  include/uapi/linux/poll.h \
+  arch/arm/include/generated/asm/poll.h \
+  /home/spica/work/linaro-kernel/include/uapi/asm-generic/poll.h \
+  include/linux/trace_seq.h \
+  include/linux/hardirq.h \
+    $(wildcard include/config/generic/hardirqs.h) \
+  include/linux/ftrace_irq.h \
+    $(wildcard include/config/ftrace/nmi/enter.h) \
+  include/linux/vtime.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/hardirq.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/irq.h \
+    $(wildcard include/config/sparse/irq.h) \
+    $(wildcard include/config/multi/irq/handler.h) \
+  include/linux/irq_cpustat.h \
+  include/linux/perf_event.h \
+    $(wildcard include/config/function/tracer.h) \
+    $(wildcard include/config/cgroup/perf.h) \
+    $(wildcard include/config/cpu/sup/intel.h) \
+  include/uapi/linux/perf_event.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/perf_event.h \
+    $(wildcard include/config/hw/perf/events.h) \
+  arch/arm/include/generated/asm/local64.h \
+  include/asm-generic/local64.h \
+  include/linux/pid_namespace.h \
+    $(wildcard include/config/pid/ns.h) \
+  include/linux/nsproxy.h \
+  include/linux/ftrace.h \
+    $(wildcard include/config/have/function/trace/mcount/test.h) \
+    $(wildcard include/config/dynamic/ftrace/with/regs.h) \
+    $(wildcard include/config/dynamic/ftrace.h) \
+    $(wildcard include/config/stack/tracer.h) \
+    $(wildcard include/config/frame/pointer.h) \
+  include/linux/trace_clock.h \
+  arch/arm/include/generated/asm/trace_clock.h \
+  include/asm-generic/trace_clock.h \
+  include/linux/kallsyms.h \
+  include/linux/ptrace.h \
+  include/uapi/linux/ptrace.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/ftrace.h \
+    $(wildcard include/config/old/mcount.h) \
+  include/linux/cpu.h \
+    $(wildcard include/config/arch/has/cpu/autoprobe.h) \
+    $(wildcard include/config/arch/cpu/probe/release.h) \
+    $(wildcard include/config/pm/sleep/smp.h) \
+  include/linux/node.h \
+    $(wildcard include/config/memory/hotplug/sparse.h) \
+  include/linux/device.h \
+    $(wildcard include/config/debug/devres.h) \
+    $(wildcard include/config/acpi.h) \
+    $(wildcard include/config/pinctrl.h) \
+    $(wildcard include/config/devtmpfs.h) \
+    $(wildcard include/config/sysfs/deprecated.h) \
+  include/linux/ioport.h \
+  include/linux/klist.h \
+  include/linux/pinctrl/devinfo.h \
+  include/linux/pm.h \
+    $(wildcard include/config/vt/console/sleep.h) \
+    $(wildcard include/config/pm.h) \
+    $(wildcard include/config/pm/runtime.h) \
+    $(wildcard include/config/pm/clk.h) \
+    $(wildcard include/config/pm/generic/domains.h) \
+  include/linux/ratelimit.h \
+  /home/spica/work/linaro-kernel/arch/arm/include/asm/device.h \
+    $(wildcard include/config/dmabounce.h) \
+    $(wildcard include/config/iommu/api.h) \
+    $(wildcard include/config/arm/dma/use/iommu.h) \
+    $(wildcard include/config/arch/omap.h) \
+  include/linux/pm_wakeup.h \
+  include/linux/irq_work.h \
+    $(wildcard include/config/irq/work.h) \
+  include/linux/perf_regs.h \
+    $(wildcard include/config/have/perf/regs.h) \
+  arch/arm/include/generated/asm/local.h \
+  include/asm-generic/local.h \
+  include/linux/file.h \
 
 /home/spica/work/vexpress/code/power_monitor/read_power.o: $(deps_/home/spica/work/vexpress/code/power_monitor/read_power.o)
 
